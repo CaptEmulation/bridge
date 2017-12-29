@@ -12,6 +12,8 @@ export const colorMap = {
   '♠': 'black',
 };
 
+export const suitOrder = ['♣', '♦', '♥', '♠', 'NT'];
+
 export function suitToColor(suit) {
   return colorMap[suit] || 'black';
 }

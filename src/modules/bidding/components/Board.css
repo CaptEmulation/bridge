@@ -1,0 +1,25 @@
+.boardBidding {
+  grid-row-start: c;
+  grid-column-start: c;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 5px auto 5px auto;
+  min-width: 400px;
+}
+
+.separator {
+  width: 90%;
+  height: 5px;
+  background-color: black;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: black;
+  margin: 5px auto 5px auto;
+}

@@ -1,0 +1,16 @@
+.biddingLog {
+  margin: 5%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 30px 20px;
+  grid-gap: 1px 5px;
+  overflow-y: auto;
+  height: 200px;
+}
+
+.biddingLogHeader {
+  height: 30px;
+  font-weight: bold;
+  font-size: 18px;
+}
