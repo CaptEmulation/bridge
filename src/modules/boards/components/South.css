@@ -1,0 +1,30 @@
+.south {
+  grid-column: s;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 5px;
+}
+
+.south .play {
+  margin: 0px 60px 0 60px;
+  z-index: 1;
+}
+
+.south .title {
+  background-color: gray;
+  height: 40px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: gray;
+  margin: 0 10px -10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.south .title span {
+  margin: 5px 0px 5px 25px;
+  font-size: 18px;
+}

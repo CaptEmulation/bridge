@@ -1,0 +1,51 @@
+.card {
+  height: 120px;
+  width: 80px;
+  background-color: white;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: black;
+  display: inline-block;
+}
+
+.red {
+  color: red;
+}
+
+.black {
+  color: black;
+}
+
+.cardLeft {
+  width: 35px;
+  float: left;
+}
+
+.cardRight {
+  width: 35px;
+  float: right;
+}
+
+.rank {
+  font-size: 24px;
+  margin: 5% 0 5% 10%;
+}
+
+.smallSuit {
+  font-size: 22px;
+  margin: 5% 5% 5% 20px;
+}
+
+.largeSuit {
+  font-size: 48px;
+  margin: 80% 0 0 7%;
+}
+
+.placeRight {
+   margin-left: -50px;
+}
+
+.placeDown {
+  margin-top: -80px;
+}

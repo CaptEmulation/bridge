@@ -1,0 +1,9 @@
+.board {
+  background-color: white;
+  height: 600px;
+  display: grid;
+  grid: "w n e" 30%
+        "w c e" auto
+        "w s e" 30%
+      / 20% auto 20%;
+}

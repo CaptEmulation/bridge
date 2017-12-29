@@ -1,0 +1,33 @@
+.north {
+  grid-column: n;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.north .play {
+  margin: 0px 60px 0 60px;
+  align-self: center;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.north .title {
+  background-color: gray;
+  height: 40px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: gray;
+  margin: -10px 10px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.north .title span {
+  margin: 5px 0px 5px 25px;
+  font-size: 18px;
+}

@@ -1,0 +1,39 @@
+.west {
+  grid-column: w;
+  grid-row: span 3;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 20px 20px 20px 20px;
+  height: 100%;
+}
+
+.west .play {
+  margin: 0 0 0 0;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.west .title {
+  background-color: gray;
+  height: 100%;
+  width: 40px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: gray;
+  margin: 10px -10px 0 0;
+}
+
+.west .title span {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin: 25px 5px 25px 5px;
+  font-size: 18px;
+}
+
+.column {
+  display: inline-block;
+}
