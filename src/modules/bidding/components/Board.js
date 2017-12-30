@@ -1,6 +1,6 @@
 import React from 'react';
 import Log from '../containers/Log';
-import Input from './Input';
+import Input from '../containers/Input';
 import './Board.css'
 
 const Board = ({

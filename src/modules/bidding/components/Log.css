@@ -3,10 +3,10 @@
   background-color: white;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 30px 20px;
+  grid-template-rows: 30px repeat(auto-fill, 20px);
   grid-gap: 1px 5px;
   overflow-y: auto;
-  height: 200px;
+  height: 150px;
 }
 
 .biddingLogHeader {

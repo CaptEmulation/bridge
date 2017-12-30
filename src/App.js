@@ -86,29 +86,5 @@ store.dispatch(handActions.addSouthCard({
   suit:'♥',
 }));
 
-store.dispatch(biddingActions.placeBid({
-  direction: 'north',
-  bid: 'Pass',
-}));
-
-store.dispatch(biddingActions.placeBid({
-  direction: 'east',
-  bid: 'Pass',
-}));
-
-store.dispatch(biddingActions.placeBid({
-  direction: 'south',
-  bid: '1NT',
-}));
-
-store.dispatch(biddingActions.placeBid({
-  direction: 'west',
-  bid: '1♣',
-}));
-
-store.dispatch(biddingActions.placeBid({
-  direction: 'north',
-  bid: '1♦',
-}));
 
 export default App;

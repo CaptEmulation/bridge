@@ -2,7 +2,7 @@
   display: grid;
   margin: 5%;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 30px;
+  grid-gap: 15px;
   height: 200px;
   overflow-y: auto;
 }
@@ -20,4 +20,8 @@
   user-select: none;
   text-decoration: none;
   cursor: pointer;
+}
+
+.newRow {
+  grid-column-start: 1;
 }
