@@ -5,17 +5,16 @@ import createReducer from '../utils/createReducer';
 
 const defaultState = {
   bids: [],
-  startingBid: 'north',
+  dealer: 'north',
+  enabled: true,
+  active: 'north',
 };
 
 const reducer = createReducer('bidding', defaultState, {
-  [PLACE_BID](bidding, { payload: { direction, bid }}) {
+  [PLACE_BID](bidding, { payload: bid}) {
     return {
       ...bidding,
-      bids: bidding.bids.concat([{
-        direction,
-        bid,
-      }]),
+      bids: bidding.bids.concat([bid]),
     };
   },
 });

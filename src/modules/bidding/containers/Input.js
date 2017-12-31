@@ -11,9 +11,7 @@ import Input from '../components/Input';
  function mapDipstachToProps(dispatch) {
    return {
      callback(bid) {
-       dispatch(placeBid({
-         bid,
-       }));
+       dispatch(placeBid(bid));
      },
    };
  }

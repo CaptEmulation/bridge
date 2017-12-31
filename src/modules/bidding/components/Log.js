@@ -3,13 +3,9 @@ import LogEntry from './LogEntry';
 import './Log.css';
 
 const Log = ({
-  startingBid,
   bids,
 }) => {
-  const bidLog = bids.map(({
-    bid,
-    direction,
-  }, index) => {
+  const bidLog = bids.map((bid, index) => {
     return (
       <LogEntry key={`{$bid}:${index}`} bid={bid} />
     );

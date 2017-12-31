@@ -8,7 +8,6 @@ import Log from '../components/Log';
 function mapStateToProps(state) {
   return {
     bids: bids(state),
-    startingBid: startingBid(state),
   };
 }
 
