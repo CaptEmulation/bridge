@@ -1,4 +1,5 @@
 import {
+  END,
   PLACE_BID,
 } from './actionTypes';
 import createReducer from '../utils/createReducer';
@@ -15,6 +16,12 @@ createReducer('bidding', defaultState, {
     return {
       ...bidding,
       bids: bidding.bids.concat([bid]),
+    };
+  },
+  [END](bidding) {
+    return {
+      ...bidding,
+      enabled: false,
     };
   },
 });

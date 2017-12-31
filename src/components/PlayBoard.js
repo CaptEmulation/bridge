@@ -8,14 +8,18 @@ import {
   WestBoard,
 } from '../modules/hands'
 import {
-  Board,
+  Board as BiddingBoard,
 } from '../modules/bidding';
+import {
+  Board as PlayingBoard,
+} from '../modules/play';
 
 const PlayBoard = () => (
   <div className="board">
     <WestBoard />
     <NorthBoard />
-    <Board />
+    <BiddingBoard />
+    <PlayingBoard />
     <EastBoard />
 
     <SouthBoard />

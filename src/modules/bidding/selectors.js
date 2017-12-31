@@ -36,6 +36,11 @@ export const active = createSelector(
   bidding => bidding.active,
 );
 
+export const enabled = createSelector(
+  root,
+  bidding => bidding.enabled,
+);
+
 export const isDoubled = createSelector(
   bids,
   _bids => {

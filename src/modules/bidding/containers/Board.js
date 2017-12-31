@@ -1,4 +1,15 @@
-import { connect } from
+import { connect } from 'react-redux';
 import Board from '../components/Board';
-import Input from '../components/Input';
-import Log from '../components/Log';
+import {
+  enabled,
+} from '../selectors';
+
+function mapStateToProps(state) {
+  return {
+    enabled: enabled(state),
+  };
+}
+
+export default connect(
+  mapStateToProps,
+)(Board);

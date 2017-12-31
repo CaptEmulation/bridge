@@ -23,3 +23,7 @@
   border-color: black;
   margin: 5px auto 5px auto;
 }
+
+.disabled {
+  display: none;
+}

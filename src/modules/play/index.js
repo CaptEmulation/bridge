@@ -1,7 +1,7 @@
-import * as actions from './actions';
 import * as selectors from './selectors';
-import './reducer';
+import * as actions from './actions';
 import Board from './containers/Board';
+import './reducer';
 
 export {
   Board,
