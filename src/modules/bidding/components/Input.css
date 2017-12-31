@@ -25,3 +25,7 @@
 .newRow {
   grid-column-start: 1;
 }
+
+.disabled {
+  border-color: gray;
+}

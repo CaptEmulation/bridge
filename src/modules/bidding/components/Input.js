@@ -1,7 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 import {
-  range,
+  includes,
+  noop,
 } from 'lodash';
 import './Input.css';
 import {
@@ -15,13 +16,18 @@ function bindBidTocallback(callback, bid) {
 
 const Input = ({
   callback,
+  enabledBids,
 }) => (
   <div className="boardInput">
     {possibleBids.map((bid, index) => (
       <div
         key={bid}
-        className={cn('boardBidInput', index === 3 ? 'newRow' : '')}
-        onClick={bindBidTocallback(callback, bid)}
+        className={cn({
+          boardBidInput: true,
+          newRow: index === 3,
+          disabled: !includes(enabledBids, bid),
+        })}
+        onClick={includes(enabledBids, bid) ? bindBidTocallback(callback, bid) : noop}
       >
         {bid}
       </div>

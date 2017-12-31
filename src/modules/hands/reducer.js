@@ -13,7 +13,7 @@ const defaultState = {
   west: [],
 };
 
-const reducer = createReducer('boards', defaultState, {
+createReducer('boards', defaultState, {
   [ADD_NORTH_CARD](boards, { payload: { rank, suit }}) {
     return {
       ...boards,

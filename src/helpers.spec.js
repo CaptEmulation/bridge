@@ -28,6 +28,7 @@ describe('Helpers test suite', () => {
     it('equality', () => {
       expect(comparator('3NT', '3NT')).toEqual(0);
       expect(comparator('2♣', '2♣')).toEqual(0);
+      expect(comparator('1♣', '1♣')).toEqual(0);
       expect(comparator('1♥', '1♥')).toEqual(0);
     });
   });

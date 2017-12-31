@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import {
-  startingBid,
   bids,
 } from '../selectors';
 import Log from '../components/Log';

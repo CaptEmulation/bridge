@@ -1,10 +1,14 @@
 import {
+  without,
+} from 'lodash';
+import {
   canBeDoubled,
   enabledBids,
   isDoubled,
   isReboubled,
 } from './selectors';
 import {
+  comparator,
   possibleBids,
   trickBids,
 } from '../../helpers';
@@ -15,6 +19,10 @@ function primeStateWithBids(bids) {
       bids,
     },
   };
+}
+
+function allBidsGreaterThan(bid) {
+  return trickBids.filter(b => comparator(b, bid) > 0);
 }
 
 describe('bidding selectors', () => {
@@ -106,25 +114,29 @@ describe('bidding selectors', () => {
       expect(enabledBids(primeStateWithBids(['Pass', 'Pass', 'Pass']))).toEqual(['Pass'].concat(trickBids));
     });
 
+    it('suit bidding', () => {
+      expect(enabledBids(primeStateWithBids(['1♣']))).toEqual(['Pass', 'X'].concat(without(trickBids, '1♣')));
+      // expect(enabledBids(primeStateWithBids(['1NT']))).toEqual(['Pass', 'X'].concat(trickBids));
+    });
+
     it('allows doubling', () => {
-      expect(enabledBids(primeStateWithBids(['1NT']))).toEqual(['Pass', 'X'].concat(trickBids));
-      expect(enabledBids(primeStateWithBids(['Pass', '1NT']))).toEqual(['Pass', 'X'].concat(trickBids));
-      expect(enabledBids(primeStateWithBids(['Pass', 'Pass', '1NT']))).toEqual(['Pass', 'X'].concat(trickBids));
-      expect(enabledBids(primeStateWithBids(['Pass', 'Pass', 'Pass', '1NT']))).toEqual(['Pass', 'X'].concat(trickBids));
+      expect(enabledBids(primeStateWithBids(['Pass', '1NT']))).toEqual(['Pass', 'X'].concat(allBidsGreaterThan('1NT')));
+      expect(enabledBids(primeStateWithBids(['Pass', 'Pass', '1NT']))).toEqual(['Pass', 'X'].concat(allBidsGreaterThan('1NT')));
+      expect(enabledBids(primeStateWithBids(['Pass', 'Pass', 'Pass', '1NT']))).toEqual(['Pass', 'X'].concat(allBidsGreaterThan('1NT')));
     });
 
     it('allows redoubling', () => {
-      expect(enabledBids(primeStateWithBids(['1NT', 'X']))).toEqual(['Pass', 'XX'].concat(trickBids));
-      expect(enabledBids(primeStateWithBids(['Pass', '1NT', 'X']))).toEqual(['Pass', 'XX'].concat(trickBids));
-      expect(enabledBids(primeStateWithBids(['Pass', 'Pass', '1NT', 'X']))).toEqual(['Pass', 'XX'].concat(trickBids));
-      expect(enabledBids(primeStateWithBids(['Pass', 'Pass', 'Pass', '1NT', 'X']))).toEqual(['Pass', 'XX'].concat(trickBids));
+      expect(enabledBids(primeStateWithBids(['1NT', 'X']))).toEqual(['Pass', 'XX'].concat(allBidsGreaterThan('1NT')));
+      expect(enabledBids(primeStateWithBids(['Pass', '1NT', 'X']))).toEqual(['Pass', 'XX'].concat(allBidsGreaterThan('1NT')));
+      expect(enabledBids(primeStateWithBids(['Pass', 'Pass', '1NT', 'X']))).toEqual(['Pass', 'XX'].concat(allBidsGreaterThan('1NT')));
+      expect(enabledBids(primeStateWithBids(['Pass', 'Pass', 'Pass', '1NT', 'X']))).toEqual(['Pass', 'XX'].concat(allBidsGreaterThan('1NT')));
     });
 
     it('no more doubling or redoubling', () => {
-      expect(enabledBids(primeStateWithBids(['1NT', 'X', 'XX']))).toEqual(['Pass'].concat(trickBids));
-      expect(enabledBids(primeStateWithBids(['Pass', '1NT', 'X', 'XX']))).toEqual(['Pass'].concat(trickBids));
-      expect(enabledBids(primeStateWithBids(['Pass', 'Pass', '1NT', 'X', 'XX']))).toEqual(['Pass'].concat(trickBids));
-      expect(enabledBids(primeStateWithBids(['Pass', 'Pass', 'Pass', '1NT', 'X', 'XX']))).toEqual(['Pass'].concat(trickBids));
+      expect(enabledBids(primeStateWithBids(['1NT', 'X', 'XX']))).toEqual(['Pass'].concat(allBidsGreaterThan('1NT')));
+      expect(enabledBids(primeStateWithBids(['Pass', '1NT', 'X', 'XX']))).toEqual(['Pass'].concat(allBidsGreaterThan('1NT')));
+      expect(enabledBids(primeStateWithBids(['Pass', 'Pass', '1NT', 'X', 'XX']))).toEqual(['Pass'].concat(allBidsGreaterThan('1NT')));
+      expect(enabledBids(primeStateWithBids(['Pass', 'Pass', 'Pass', '1NT', 'X', 'XX']))).toEqual(['Pass'].concat(allBidsGreaterThan('1NT')));
     });
   });
 });

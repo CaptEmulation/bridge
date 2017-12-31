@@ -7,7 +7,6 @@ import {
   comparator,
   technicalBids,
   trickBids,
-  possibleBids,
 } from '../../helpers';
 
 export const root = state => state.bidding;
@@ -112,15 +111,14 @@ export const enabledBids = createSelector(
     if (_isDoubled && !_isRedoubled) {
       _enabledBids.push('XX');
     }
-    const remainingBids = _bids
-      .filter(bid => !includes(technicalBids, bid) && comparator(_lastTrickBid, bid));
 
-    if (remainingBids.length === 0) {
+    const remainingTrickBids = _bids.filter(bid => !includes(technicalBids, bid));
+    if (remainingTrickBids.length === 0) {
       trickBids.forEach(bid => _enabledBids.push(bid));
     } else {
-      remainingBids.forEach(bid => _enabledBids.push(bid));
+      trickBids.filter(bid => comparator(bid, _lastTrickBid) > 0).forEach(bid => _enabledBids.push(bid));
     }
 
     return _enabledBids;
   },
-)
+);

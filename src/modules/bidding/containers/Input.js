@@ -1,11 +1,16 @@
 import { connect } from 'react-redux';
 import {
+  enabledBids,
+} from '../selectors';
+import {
   placeBid,
 } from '../actions';
 import Input from '../components/Input';
 
- function mapStateToProps() {
-   return {};
+ function mapStateToProps(state) {
+   return {
+     enabledBids: enabledBids(state),
+   };
  }
 
  function mapDipstachToProps(dispatch) {

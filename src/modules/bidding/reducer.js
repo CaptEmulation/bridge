@@ -10,7 +10,7 @@ const defaultState = {
   active: 'north',
 };
 
-const reducer = createReducer('bidding', defaultState, {
+createReducer('bidding', defaultState, {
   [PLACE_BID](bidding, { payload: bid}) {
     return {
       ...bidding,
