@@ -1,22 +1,21 @@
 import React from 'react';
 import Card from '../../../components/Card';
-import './North.css';
+import styles from './North.css';
 
 const North = ({
   children,
 }) => (
-  <div className="north">
-    <div className="play">
+  <div className={styles.north}>
+    <div className={styles.play}>
       {children}
     </div>
-    <div className="title">
-      <span className="label">
+    <div className={styles.title}>
+      <span className={styles.label}>
         North
       </span>
     </div>
   </div>
 );
-
 
 const NorthBoard = ({
   cards,

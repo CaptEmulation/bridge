@@ -1,5 +1,6 @@
 import React from 'react';
-import './PlayBoard.css';
+import cn from 'classnames';
+import styles from './PlayBoard.css';
 
 import {
   EastBoard,
@@ -15,13 +16,12 @@ import {
 } from '../modules/play';
 
 const PlayBoard = () => (
-  <div className="board">
+  <div className={cn(styles.board)}>
     <WestBoard />
     <NorthBoard />
     <BiddingBoard />
     <PlayingBoard />
     <EastBoard />
-
     <SouthBoard />
   </div>
 );

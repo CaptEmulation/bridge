@@ -1,17 +1,17 @@
 import React from 'react';
 import Card from '../../../components/Card';
-import './West.css';
+import styles from './West.css';
 
 const West = ({
   children,
 }) => (
-  <div className="west">
-    <div className="title column">
-      <span className="label">
+  <div className={styles.west}>
+    <div className={styles.title}>
+      <span className={styles.label}>
         West
       </span>
     </div>
-    <div className="play column">
+    <div className={styles.play}>
       {children}
     </div>
   </div>

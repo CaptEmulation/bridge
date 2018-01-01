@@ -1,16 +1,17 @@
 import React from 'react';
+import cn from 'classnames';
 import Card from '../../../components/Card';
-import './East.css';
+import styles from './East.css';
 
 const East = ({
   children,
 }) => (
-  <div className="east">
-    <div className="play column">
+  <div className={styles.east}>
+    <div className={cn(styles.play, styles.column)}>
       {children}
     </div>
-    <div className="title column">
-      <span className="label">
+    <div className={cn(styles.boardTitle, styles.column)}>
+      <span className={styles.label}>
         East
       </span>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import LogEntry from './LogEntry';
-import './Log.css';
+import styles from './Log.css';
 
 const Log = ({
   bids,
@@ -11,17 +11,17 @@ const Log = ({
     );
   });
   return (
-    <div className="biddingLog">
-      <div className="biddingLogHeader">
+    <div className={styles.biddingLog}>
+      <div className={styles.biddingLogHeader}>
         North
       </div>
-      <div className="biddingLogHeader">
+      <div className={styles.biddingLogHeader}>
         East
       </div>
-      <div className="biddingLogHeader">
+      <div className={styles.biddingLogHeader}>
         South
       </div>
-      <div className="biddingLogHeader">
+      <div className={styles.biddingLogHeader}>
         West
       </div>
       {bidLog}

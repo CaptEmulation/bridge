@@ -8,7 +8,7 @@
   height: 100%;
 }
 
-.west .play {
+.play {
   margin: 0 0 0 0;
   align-self: center;
   display: flex;
@@ -16,7 +16,7 @@
   flex-wrap: nowrap;
 }
 
-.west .title {
+.title {
   background-color: gray;
   height: 100%;
   width: 40px;
@@ -27,13 +27,9 @@
   margin: 10px -10px 0 0;
 }
 
-.west .title span {
+.label {
   writing-mode: vertical-rl;
   text-orientation: upright;
   margin: 25px 5px 25px 5px;
   font-size: 18px;
-}
-
-.column {
-  display: inline-block;
 }

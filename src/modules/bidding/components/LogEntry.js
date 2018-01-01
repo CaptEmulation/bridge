@@ -1,11 +1,12 @@
 import React from 'react';
-import './LogEntry.css';
+import cn from 'classnames';
+import styles from './LogEntry.css';
 
 const LogEntry = ({
   direction,
   bid,
 }) => (
-  <div className="biddingLogEntry">
+  <div className={cn(styles.biddingLogEntry)}>
     {bid}
   </div>
 );

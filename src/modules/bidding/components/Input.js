@@ -4,7 +4,7 @@ import {
   includes,
   noop,
 } from 'lodash';
-import './Input.css';
+import styles from './Input.css';
 import {
   possibleBids,
 } from '../../../helpers';
@@ -18,14 +18,14 @@ const Input = ({
   callback,
   enabledBids,
 }) => (
-  <div className="boardInput">
+  <div className={cn(styles.boardInput)}>
     {possibleBids.map((bid, index) => (
       <div
         key={bid}
         className={cn({
-          boardBidInput: true,
-          newRow: index === 3,
-          disabled: !includes(enabledBids, bid),
+          [styles.boardBidInput]: true,
+          [styles.newRow]: index === 3,
+          [styles.disabled]: !includes(enabledBids, bid),
         })}
         onClick={includes(enabledBids, bid) ? bindBidTocallback(callback, bid) : noop}
       >

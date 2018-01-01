@@ -1,13 +1,13 @@
 import React from 'react';
 import cn from 'classnames';
-import './Board.css';
+import styles from './Board.css';
 
 const Board = ({
   enabled,
 }) => (
   <div className={cn({
-    boardPlay: true,
-    disabled: !enabled,
+    [styles.boardPlay]: true,
+    [styles.disabled]: !enabled,
   })} />
 );
 
