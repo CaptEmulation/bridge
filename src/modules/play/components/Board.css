@@ -11,6 +11,6 @@
   min-height: 400px;
 }
 
-.disabled {
+.boardPlay.disabled {
   display: none;
 }
