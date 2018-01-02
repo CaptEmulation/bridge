@@ -22,69 +22,7 @@ class App extends Component {
   }
 }
 
-store.dispatch(handActions.addNorthCard({
-  rank: 6,
-  suit:'♥',
-}));
-store.dispatch(handActions.addNorthCard({
-  rank: 5,
-  suit:'♥',
-}));
-store.dispatch(handActions.addNorthCard({
-  rank: 5,
-  suit:'♥',
-}));
-store.dispatch(handActions.addNorthCard({
-  rank: 5,
-  suit:'♥',
-}));
-store.dispatch(handActions.addNorthCard({
-  rank: 5,
-  suit:'♥',
-}));
-store.dispatch(handActions.addNorthCard({
-  rank: 5,
-  suit:'♥',
-}));
-store.dispatch(handActions.addNorthCard({
-  rank: 5,
-  suit:'♥',
-}));
-store.dispatch(handActions.addNorthCard({
-  rank: 5,
-  suit:'♥',
-}));
-store.dispatch(handActions.addNorthCard({
-  rank: 5,
-  suit:'♥',
-}));
-
-store.dispatch(handActions.addWestCard({
-  rank: 5,
-  suit:'♥',
-}));
-store.dispatch(handActions.addWestCard({
-  rank: 5,
-  suit:'♥',
-}));
-store.dispatch(handActions.addWestCard({
-  rank: 5,
-  suit:'♥',
-}));
-store.dispatch(handActions.addWestCard({
-  rank: 5,
-  suit:'♥',
-}));
-
-store.dispatch(handActions.addEastCard({
-  rank: 5,
-  suit:'♥',
-}));
-
-store.dispatch(handActions.addSouthCard({
-  rank: 5,
-  suit:'♥',
-}));
+store.dispatch(handActions.deal());
 
 
 export default App;

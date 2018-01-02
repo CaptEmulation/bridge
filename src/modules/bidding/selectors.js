@@ -4,7 +4,7 @@ import {
   last,
 } from 'lodash';
 import {
-  comparator,
+  bidComparator,
   technicalBids,
   trickBids,
 } from '../../helpers';
@@ -121,7 +121,7 @@ export const enabledBids = createSelector(
     if (remainingTrickBids.length === 0) {
       trickBids.forEach(bid => _enabledBids.push(bid));
     } else {
-      trickBids.filter(bid => comparator(bid, _lastTrickBid) > 0).forEach(bid => _enabledBids.push(bid));
+      trickBids.filter(bid => bidComparator(bid, _lastTrickBid) > 0).forEach(bid => _enabledBids.push(bid));
     }
 
     return _enabledBids;

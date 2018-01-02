@@ -1,5 +1,7 @@
 import {
-  comparator,
+  allCards,
+  bidComparator,
+  shuffledCards,
   trickBids,
 } from './helpers';
 
@@ -10,26 +12,36 @@ describe('Helpers test suite', () => {
       expect(trickBids.indexOf('7NT')).toBeGreaterThan(-1);
     });
   });
-  describe('#comparator', () => {
+  describe('#bidComparator', () => {
     it('different tricks', () => {
-      expect(comparator('2NT', '1NT')).toEqual(1);
-      expect(comparator('2NT', '1♣')).toEqual(1);
-      expect(comparator('2♥', '1♣')).toEqual(1);
-      expect(comparator('2♣', '2♥')).toEqual(-2);
+      expect(bidComparator('2NT', '1NT')).toEqual(1);
+      expect(bidComparator('2NT', '1♣')).toEqual(1);
+      expect(bidComparator('2♥', '1♣')).toEqual(1);
+      expect(bidComparator('2♣', '2♥')).toEqual(-2);
     });
 
     it('same tricks', () => {
-      expect(comparator('3NT', '3♣')).toEqual(4);
-      expect(comparator('2NT', '2♣')).toEqual(4);
-      expect(comparator('1♥', '1♣')).toEqual(2);
-      expect(comparator('4♣', '4NT')).toEqual(-4);
+      expect(bidComparator('3NT', '3♣')).toEqual(4);
+      expect(bidComparator('2NT', '2♣')).toEqual(4);
+      expect(bidComparator('1♥', '1♣')).toEqual(2);
+      expect(bidComparator('4♣', '4NT')).toEqual(-4);
     });
 
     it('equality', () => {
-      expect(comparator('3NT', '3NT')).toEqual(0);
-      expect(comparator('2♣', '2♣')).toEqual(0);
-      expect(comparator('1♣', '1♣')).toEqual(0);
-      expect(comparator('1♥', '1♥')).toEqual(0);
+      expect(bidComparator('3NT', '3NT')).toEqual(0);
+      expect(bidComparator('2♣', '2♣')).toEqual(0);
+      expect(bidComparator('1♣', '1♣')).toEqual(0);
+      expect(bidComparator('1♥', '1♥')).toEqual(0);
+    });
+  });
+  describe('#allCards', () => {
+    it('has 52 cards', () => {
+      expect(allCards()).toHaveLength(52);
+    });
+  });
+  describe('#shuffledCards', () => {
+    it('is shuffled', () => {
+      expect(shuffledCards()).not.toEqual(allCards());
     });
   });
 });

@@ -8,7 +8,7 @@ import {
   isReboubled,
 } from './selectors';
 import {
-  comparator,
+  bidComparator,
   possibleBids,
   trickBids,
 } from '../../helpers';
@@ -22,7 +22,7 @@ function primeStateWithBids(bids) {
 }
 
 function allBidsGreaterThan(bid) {
-  return trickBids.filter(b => comparator(b, bid) > 0);
+  return trickBids.filter(b => bidComparator(b, bid) > 0);
 }
 
 describe('bidding selectors', () => {

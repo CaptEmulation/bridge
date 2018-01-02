@@ -3,6 +3,7 @@ import {
   ADD_WEST_CARD,
   ADD_EAST_CARD,
   ADD_SOUTH_CARD,
+  DEAL_CARDS,
 } from './actionTypes';
 import createReducer from '../utils/createReducer';
 
@@ -38,4 +39,10 @@ createReducer('boards', defaultState, {
       south: [{ rank, suit}].concat(boards.south),
     };
   },
+  [DEAL_CARDS](boards, { payload: cards }) {
+    return {
+      ...boards,
+      ...cards,
+    };
+  }
 });

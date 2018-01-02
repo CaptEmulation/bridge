@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import {
-  southCards,
+  sortedSouthCards,
 } from '../selectors';
 import SouthBoard from '../components/South';
 
 function mapStateToProps(state) {
-  const cards = southCards(state);
+  const cards = sortedSouthCards(state);
 
   return {
     cards,

@@ -2,7 +2,7 @@ module.exports = ({ file, options, env }) => ({
   plugins: {
     'postcss-flexbugs-fixes': require('postcss-flexbugs-fixes'),
     'postcss-import': { root: file.dirname },
-    'autoprefixer': env == 'production' ? options.autoprefixer : false,
+    'autoprefixer': env === 'production' ? options.autoprefixer : false,
     'postcss-initial':   require('postcss-initial')({
       reset: 'inherited' // reset only inherited rules
     }),
